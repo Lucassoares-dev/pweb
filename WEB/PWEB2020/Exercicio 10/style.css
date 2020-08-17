@@ -1,0 +1,28 @@
+body{
+    text-align: center;
+    color:bold;
+    background-color:cornflowerblue;
+}
+
+table, th, td{
+    border:2px solid black;
+    border-color: black;
+}
+
+#idClienteTable{
+    margin-top: 10px;
+    margin-left: 150px;
+    background-color: darkgray;
+    color:black;
+    width: 80%;
+}
+
+#divFormCadastro{
+    background-color:rgb(10, 12, 85);
+    padding-top: 20px;
+    margin-top: 0px;
+    padding-bottom: 60px;
+}
+.colorText {
+    color:black;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Texto</h2>
+
+<script>
+
+    function myFunc()
+    {
+        var texto = document.getElementById("texto").value;
+        document.getElementById('history').innerHTML += "<h3>"+texto+"</h3>";
+    }
+</script>
+
+<form>
+    <input type="text" id="texto" value="0">
+   
+    <input type="button" onclick="myFunc()" value="OK" />
+</form>
+<p id="history"></p>
+</body>
+</html>

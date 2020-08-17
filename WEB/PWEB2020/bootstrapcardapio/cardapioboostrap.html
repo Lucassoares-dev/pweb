@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Aula-WEB-2020</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+  </head>
+  <body style="background-color:antiquewhite ">
+    <div class="container mt-5">
+    <div class="card" style="background-color: deepskyblue; box-sizing: border-box; padding: 4rem;">
+        <form action="">
+    <h2 class="">Cardápio</h2>
+
+        <h3>Pratos principais: </h3>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+            <input type="radio" name="food" value=12> X-Burguer <br>
+            </label>
+
+            <label class="btn btn-secondary">
+            <input type="radio" name="food" value=15> X-Bacon <br>
+            </label>
+            
+            <label class="btn btn-secondary">
+            <input type="radio" name="food" value=10> X-CalaFrango
+            </label>
+            </div>
+
+        <p></p><h4>Acompanhamentos</h4>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            
+            <label class="btn btn-secondary">
+            <input type="checkbox" name="acompanhamentos" value=5> Cheedar R$ 5,00<br>
+            </label>
+
+            <label class="btn btn-secondary">
+            <input type="checkbox" name="acompanhamentos" value=6> Batata frita R$ 6,00<br>
+            </label>
+
+            <label class="btn btn-secondary">
+            <input type="checkbox" name="acompanhamentos" value=4> Filé de Fritas R$ 4,00
+            </label>
+
+        </div> 
+        <p></p><h4>Convênio</h4>
+            
+            <select style="width: 150px ; height: auto" ; id="convenio" class="form-control" >
+                <div class="col-md-16"></div>
+
+                <option value="mastercard"> MasterCard </option>
+                </div>
+
+                <option value="sodexo"> Sodexo </option>
+
+                <option value="va"> Vale-Alimentação </option>
+
+                <option value="dinheiro"> Dinheiro </option>
+                
+            </select>
+            
+
+        <p></p><h4>Observaçôes:</h4>
+            <textarea style="width: 450px; height: 200px" id="observações" class="form-control"></textarea><br>
+            <input type="button" onclick="enviaPedido()" value="Enviar Pedido" class="btn btn-success mt-2" data-toggle="modal" data-target="#meudeus">
+
+        
+        <div class="modal" tabindex="-1" role="dialog" id="meudeus">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Valor Total: </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+      <script>
+          function enviaPedido(){
+              var radioFood = $('input[name="food"]:checked').val()
+              var radioAcompanhamento = $('input[name="acompanhamentos"]')
+              var convenio = $("#convenio").children('option:selected').val()
+              var obs = $('#observações').val()
+              var pratoPrincipal=radioFood
+              var acompanhamento;
+
+              
+
+              for(var i = 0, length = radioAcompanhamento.length; i < length; i++){
+                  if(radioAcompanhamento[i].checked){
+                      acompanhamento = radioAcompanhamento[i].value
+                      console.log(acompanhamento)
+                  }
+              }
+
+              console.log(convenio)
+              pratoPrincipal = parseFloat(pratoPrincipal)
+              acompanhamento = parseFloat(acompanhamento)
+              $(".modal-body").html("O valor total deu R$" + (pratoPrincipal + acompanhamento).toFixed(2)+ '<br>' + obs) 
+          }
+      </script>
+      </form>
+      </div>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="js/bootstrap.js"></script>
+</html>

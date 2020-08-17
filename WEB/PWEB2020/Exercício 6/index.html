@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio</title>
+    <link rel="stylesheet" href="css/cardapio.css">
+    
+</head>
+<body>
+    <div class="container">
+        <form>
+            <h3>Prato Principal</h3>        
+    
+            <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio1">Massa - R$20,00</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio2">Carne - R$25,00</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio3">Peixe - R$30,00</label><p></p>
+            </div>
+    
+            <h3>Acompanhamentos</h3>      
+             
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="legumes">
+                <label class="custom-control-label" for="legumes">Legumes - R$5,00</label>
+            </div>
+    
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="farofa">
+                <label class="custom-control-label" for="farofa">Farofa - R$5,00</label>
+            </div>
+    
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="fritas">
+                <label class="custom-control-label" for="fritas">Fritas - R$5,00</label> 
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="saladas">
+                <label class="custom-control-label" for="saladas">Saladas - R$5,00</label> <p></p>
+            </div> 
+    
+            <h3>Convênios</h3>
+            <select class="custom-select" name="select">
+                <option selected>Selecione uma opção</option>
+                <option value="1"> XIAOMI </option> 
+                <option value="2"> LENOVO </option>
+                <option value="3"> APPLE </option>
+                <option value="4"> SAMSUNG </option>
+            </select>        
+    
+            <p></p><h3>Observações</h3>
+    
+            <textarea name="observacoes" id="observacoes" cols="30" rows="5"></textarea><br>              
+            
+        </form>
+        <!-- chama o modal-->
+        <button type="button" onclick = "calcular()" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
+        Calcular
+        </button>
+        <!-- modal-->
+        <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">total</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                        <div class="modal-body">
+                        <h1 id="total"></h1>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary">Salvar mudanças</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+     
+    <script src="js/cardapio.js"></script>    
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+</body>    
+</html>
