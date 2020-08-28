@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+void calculavrcustocons(float custo)
+{
+	float total;
+	
+	if(custo<=12000)
+	{
+		total = custo*1.05;
+		printf("imposto de 5%% ao distribuidor e isento de impostos, valor ao consumidor= %.2f", total);
+	}
+	else if(custo>12000 && custo<=25000)
+	{
+		total = (custo*1.10)*1.15;
+		printf("imposto de 10%% ao distribuidor e 15%% com impostos, valor ao consumidor= %.2f", total);
+	}
+	else if(custo>25000)
+	{
+		total = (custo*1.15)*1.20;
+		printf("imposto de 15%% ao distribuidor e 20%% com impostos, valor ao consumidor= %.2f", total);
+	}
+	
+}
+
+void main()
+{
+	float custo_carro;
+	float *ponteiro;
+	
+	printf("digite o valor de custo de fabrica do veiculo: ");
+	scanf("%f", &custo_carro);
+	ponteiro = &custo_carro;
+	
+	calculavrcustocons(*ponteiro);
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
